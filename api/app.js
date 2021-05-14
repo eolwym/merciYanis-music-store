@@ -17,4 +17,10 @@ app.use(function (req, res, next) {
 
 app.use(router)
 
+// Return error for not corresponding routes
+app.get('*', function(req, res){
+    res.status(404)
+    res.json({error: 'ressource not found'})
+});
+
 app.listen(8090)

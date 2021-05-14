@@ -110,6 +110,10 @@ h1 {
 @media screen and (max-width: 1000px)
 {
 
+    .actions {
+        padding-bottom: 0;
+    }
+
     h1 {
         font-size: 6rem;
     }
