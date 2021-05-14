@@ -1,7 +1,10 @@
 <template>
   <div>
       <albums-list @addToCart="addToCart"></albums-list>
-      <albums-cart class="cart" :cart="cart" @addToCart="addToCart" @removeFromCart="removeFromCart"></albums-cart>
+      <albums-cart class="cart" :cart="cart" @addToCart="addToCart" @removeFromCart="removeFromCart" @deleteAlbumsFromCart="deleteAlbumsFromCart"></albums-cart>
+      <footer>
+        Realised By Cédric Marurai
+      </footer>
   </div>
 </template>
 
@@ -12,10 +15,11 @@ export default {
   components: { AlbumsList, AlbumsCart },
   data () {
     return {
-      // Centralize all album in cart
+      // Centralize all albums in cart
       cart: []
     }
   },
+
   methods: {
     addToCart(album) {
       const albumIndex = this.cart.findIndex( (cartAlbum) => album.title == cartAlbum.title)
@@ -25,10 +29,16 @@ export default {
         this.cart[albumIndex].quantity++
       }
     },
+
     removeFromCart(album) {
       const albumToDelete = this.cart.findIndex( (elem) => {return elem.title == album.title})
       this.cart.splice(albumToDelete, 1)
+    },
+
+    deleteAlbumsFromCart(album) {
+      this.cart = this.cart.filter(cartAlbum => cartAlbum.title != album.title)
     }
+
   },
 
 }
@@ -36,7 +46,17 @@ export default {
 
 <style scoped>
 div {
-background: rgb(47,33,85);
-background: linear-gradient(187deg, rgba(47,33,85,1) 0%, rgba(56,0,204,1) 100%);
+  background: rgb(47,33,85);
+  background: linear-gradient(187deg, rgba(47,33,85,1) 0%, rgba(56,0,204,1) 100%);
 }
+
+footer {
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+
+}
+
 </style>

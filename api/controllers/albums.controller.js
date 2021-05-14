@@ -1,8 +1,8 @@
 const { getAlbums } = require('../queries/albums.queries')
 
-exports.getAlbums = async (req, res, next) => {
+exports.getAlbums = (req, res, next) => {
     try {
-        const albums = await getAlbums()
+        const albums = getAlbums()
         res.status(200).json(albums)
     } catch(e) {
         next(e)

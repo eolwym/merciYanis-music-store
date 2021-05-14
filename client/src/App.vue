@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style>
+/* BASE */
 * {
   margin: 0;
   padding: 0;
@@ -37,6 +38,7 @@ a {
   color: black;
 }
 
+/* CLASS */
 .btn {
   display:block;
   font-size: 1.6rem;

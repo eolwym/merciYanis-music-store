@@ -1,13 +1,16 @@
 <template>
     <div class="home-container">
+        <h1>Catchy And Funny </h1>
         <transition name="bounce">
             <div v-show="showCredits" class="author">Realised by Cédric Marurai</div>
         </transition>
-        <div class="credits">
-            <button @click="displayAuthor" class="btn btn-white mb-1">Credits</button>
-        </div>
-        <div class="purchase-albums">
-            <a href="/purchase-albums" class="btn btn-white">Purchase an album</a>
+        <div class="actions">
+            <div class="credits">
+                <button @click="displayAuthor" class="btn btn-white mb-1">Credits</button>
+            </div>
+            <div class="purchase-albums">
+                <a href="/purchase-albums" class="btn btn-white">Purchase an album</a>
+            </div>
         </div>
     </div>
 </template>
@@ -33,7 +36,23 @@ export default {
     height: 90vh;
     width: 100%;
     display:flex;
-    flex-flow: row nowrap;
+    flex-direction: column;
+    align-items: center;    
+}
+
+h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    color: white;
+    padding: 15rem 0 10rem 0;
+    letter-spacing: 0.5rem;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 5rem 0;
 }
 
 .credits {
@@ -46,13 +65,13 @@ export default {
 }
 
 .author {
-    font-size: 7rem;
+    font-size: 5rem;
     position: absolute;
     color: white;
     width: 80%;
     left: 10%;
     text-align: center;
-    top:40%;
+    bottom:30%;
 }
 
 .purchase-albums {

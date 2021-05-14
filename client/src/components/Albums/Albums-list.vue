@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>ALBUMS</h2>
+    <h2><i class="fas fa-music"></i> ALBUMS</h2>
     <div class="albums-list">
       <article v-for="album in albums" :key="album.artist">
         <img :src="require(`../../assets/${album.coverImg}`)" alt="" width="300" height="300" class="mb-1">
@@ -55,6 +55,9 @@ h2 {
   padding: 4rem 0;
   letter-spacing: 0.4rem;
 }
+.fa-music {
+  color: #6ccee5;
+}
 i {
   color: #f39c12;
 }
@@ -63,6 +66,7 @@ section {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  padding-bottom: 10rem;
 }
 
 img {
