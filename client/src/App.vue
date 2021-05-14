@@ -40,7 +40,6 @@ a {
 
 /* CLASS */
 .btn {
-  display:block;
   font-size: 1.6rem;
   padding: 1rem 2rem;
   border-radius: 0.5rem;

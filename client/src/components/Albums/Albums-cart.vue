@@ -3,7 +3,7 @@
     <!-- CART LOGO -->
     <div class="cart-resume">
       <i class="fas fa-shopping-cart mb-1 cart-logo" @click="showModal = true"></i>
-      <p class="albums-count mb-1">{{numberOfAlbumsInCart}} albums in the Cart</p>
+      <p class="albums-count mb-1">{{numberOfAlbumsInCart}} albums</p>
       <div class="total-price-cart">TOTAL: {{totalCart}} €</div>
     </div>
     
@@ -139,6 +139,8 @@ i:hover {
 .albums-count {
   font-weight: 700;
   color: white;
+  background: purple;
+  border-radius: 5px;
 }
 
 .total-price-cart {
@@ -184,13 +186,17 @@ input {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: table;
-  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-container {
@@ -224,4 +230,35 @@ input {
   font-size: 2rem;
   letter-spacing: 0.3rem;
 }
+
+/* RESPONSIVE CSS */
+
+@media screen and (max-width: 1000px)
+{
+  .cart-resume {
+    text-align: end;
+  }
+
+  .cart-logo {
+    font-size: 1.4rem;
+    margin-bottom: 0rem;
+  }
+
+  .albums-count {
+    font-size: 1.4rem;
+    margin-bottom: -3rem;
+    padding: 0.3rem;
+  }
+
+  .total-price-cart {
+    display:none;
+  }
+
+  /* MODAL */
+  .modal-container {
+    width: 100%;
+    
+  }
+}
+
 </style>

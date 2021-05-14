@@ -3,7 +3,7 @@
     <h2><i class="fas fa-music"></i> ALBUMS</h2>
     <div class="albums-list">
       <article v-for="album in albums" :key="album.artist">
-        <img :src="require(`../../assets/${album.coverImg}`)" alt="" width="300" height="300" class="mb-1">
+        <img :src="require(`../../assets/${album.coverImg}`)" alt="" width="280" height="280" class="mb-1">
 
         <h3 class="mb-1">{{album.title}}</h3>
         <p class="mb-1">{{album.artist}}</p>

@@ -6,10 +6,10 @@
         </transition>
         <div class="actions">
             <div class="credits">
-                <button @click="displayAuthor" class="btn btn-white mb-1">Credits</button>
+                <button @click="displayAuthor" class="btn btn-white credits-text">Credits</button>
             </div>
             <div class="purchase-albums">
-                <a href="/purchase-albums" class="btn btn-white">Purchase an album</a>
+                <a href="/purchase-albums" class="btn btn-white purchase-albums-text">Purchase an album</a>
             </div>
         </div>
     </div>
@@ -46,13 +46,15 @@ h1 {
     color: white;
     padding: 15rem 0 10rem 0;
     letter-spacing: 0.5rem;
+    text-align: center;
 }
 
 .actions {
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 100%;
-    padding: 5rem 0;
+    padding: 5rem 1rem;
 }
 
 .credits {
@@ -62,6 +64,7 @@ h1 {
     align-items: center;
     justify-content: center;
     color: white;
+    text-align: center;
 }
 
 .author {
@@ -71,7 +74,7 @@ h1 {
     width: 80%;
     left: 10%;
     text-align: center;
-    bottom:30%;
+    bottom:10%;
 }
 
 .purchase-albums {
@@ -80,6 +83,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 /* TRANSITION */
@@ -101,4 +105,34 @@ h1 {
     transform: scale(1);
   }
 }
+
+/* RESPONSIVE MOBILE */
+@media screen and (max-width: 1000px)
+{
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    .credits-text {
+
+        font-size: 1.3rem;
+    }
+
+    .purchase-albums-text {
+        font-size: 1.3rem;
+    }
+
+    .author {
+        font-size: 3rem;
+        position: absolute;
+        color: white;
+        width: 80%;
+        left: 10%;
+        text-align: center;
+    }
+
+}
+
+
 </style>
