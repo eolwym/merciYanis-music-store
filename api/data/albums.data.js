@@ -6,5 +6,5 @@ exports.albums = [
 	{ title: "Furious Ferrieu", artist: "Yanis Bensetti", rating: 4.2, price: 12.5, coverImg: "album-cover-4.jpeg" },
 	{ title: "Mr. Roquefort", artist: "Océane and the Queens", rating: 4.8, price: 14, coverImg: "album-cover-5.jpeg" },
 	{ title: "Jyu Viole Grace ", artist: "Black March", rating: 4.9, price: 14, coverImg: "album-cover-6.jpeg" },
-	{ title: "Sohei Zahard", artist: "Bang Bang", rating: 4.8, price: 14, coverImg: "album-cover-7.jpeg" },
+	{ title: "Fingerbang", artist: "Bang Bang", rating: 4.8, price: 14, coverImg: "album-cover-7.jpeg" },
 ]
