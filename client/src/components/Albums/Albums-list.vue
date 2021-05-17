@@ -44,6 +44,7 @@ export default {
     fetch('http://localhost:8090/getAlbums')
     .then(response => response.json())
     .then(data => this.albums = data.albums)
+    .catch( e => console.log(e))
   }
 }
 
