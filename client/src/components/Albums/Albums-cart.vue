@@ -104,7 +104,6 @@ export default {
       this.cart.forEach(album => {
         nb += parseInt(album.quantity)
       })
-      console.log(nb);
       return nb
     },
   }

@@ -22,21 +22,22 @@ export default {
 
   methods: {
     addToCart(album) {
-      const albumIndex = this.cart.findIndex( (cartAlbum) => album.title == cartAlbum.title)
-      if (albumIndex == -1){
-        this.cart.push(album)
+      // Find the first album
+      const albumFound = this.cart.find( cartAlbum => cartAlbum.title == album.title )
+      if (albumFound){
+        albumFound.quantity++ 
       } else {
-        this.cart[albumIndex].quantity++
+        this.cart.push(album)
       }
     },
 
     removeFromCart(album) {
-      const albumToDelete = this.cart.findIndex( (elem) => {return elem.title == album.title})
+      const albumToDelete = this.cart.findIndex( cartAlbum => cartAlbum.title == album.title )
       this.cart.splice(albumToDelete, 1)
     },
 
     deleteAlbumsFromCart(album) {
-      this.cart = this.cart.filter(cartAlbum => cartAlbum.title != album.title)
+      this.cart = this.cart.filter( cartAlbum => cartAlbum.title != album.title )
     }
 
   },
