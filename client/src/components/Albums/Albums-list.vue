@@ -53,7 +53,7 @@ export default {
 
   // Récupère les données à la création du composant
   created() {
-    fetch('http://localhost:8090/getAlbums')
+    fetch('http://localhost:8090/albums')
     .then(response => response.json())
     .then(data => this.albums = data.albums)
     .catch( e => console.log('Traitement de l\'erreur : ' + e))
