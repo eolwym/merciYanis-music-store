@@ -9,7 +9,7 @@
                 <button @click="displayAuthor" class="btn btn-white credits-text">Credits</button>
             </div>
             <div class="purchase-albums">
-                <a href="/purchase-albums" class="btn btn-white purchase-albums-text">Purchase an album</a>
+                <router-link to="/purchase-albums" class="btn btn-white purchase-albums-text">Purchase an album</router-link>
             </div>
         </div>
     </div>

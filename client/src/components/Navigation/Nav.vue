@@ -1,8 +1,8 @@
 <template>
   <nav>
-      <a href="/">
+      <router-link to="/">
         <img src="../../assets/merciYanis-logo.png" alt="">
-      </a>
+      </router-link>
   </nav>
 </template>
 
