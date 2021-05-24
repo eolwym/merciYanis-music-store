@@ -9,9 +9,21 @@
         <p class="mb-1">{{album.artist}}</p>
 
         <div class="mb-1 stars">
-            <i class="fas fa-star" v-for="x in Math.round(album.rating)" :key="x"></i>
-            <i class="fas fa-star-half-alt" v-if="!Number.isInteger(Math.round(album.rating*2)/2)"></i>
-            <i class="far fa-star" v-for="x in 5-Math.round(album.rating)" :key="x+'empty'"></i>
+            <!-- floor rating star -->
+            <i class="fas fa-star" v-for="x in Math.floor(album.rating)" :key="x"></i>
+
+            <!-- decimal rating star -->
+            <template v-if="!Number.isInteger(Math.round(album.rating*2)/2)">
+              <i class="fas fa-star-half-alt"></i>
+            </template>
+            <template v-else>
+              <i class="far fa-star" v-if="Math.round(album.rating*2)/2 < album.rating"></i>
+              <i class="fas fa-star" v-if="Math.round(album.rating*2)/2 > album.rating"></i>
+            </template>
+            
+            <!-- leftover star -->
+            <i class="far fa-star" v-for="x in 4-Math.floor(album.rating)" :key="x+'empty'"></i>
+
             <span>{{album.rating}}</span>
         </div>
 
@@ -44,7 +56,7 @@ export default {
     fetch('http://localhost:8090/getAlbums')
     .then(response => response.json())
     .then(data => this.albums = data.albums)
-    .catch( e => console.log(e))
+    .catch( e => console.log('Traitement de l\'erreur : ' + e))
   }
 }
 
