@@ -1,5 +1,8 @@
 # merciYanis-music-store
 
+The goal of this project was to create a single page application for the MerciYanis Music Store.
+All albums are fetched from a RESTful backend API.
+
 ### Clone the repository
 
 1. go in the api directory and write npm i
